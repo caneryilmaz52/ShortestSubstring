@@ -5,7 +5,7 @@
     <string name="function_description_title">Function Description</string>
     <string name="function_description_body">Complete the function shortestSubstring in the editor below. The function must return the length of the shortest substring that contains all of the characters within s.\n\nshortestSubstring has the following parameter:\n\ts: a string</string>
     <string name="constraints_title">Constraints</string>
-    <string name="constraints_body"> - 1 ≤ size of s ≤ 10⁵\n- s[i] ∈ ascii[a\'-\'z\']</string>
+    <string name="constraints_body"> - 1 ≤ size of s ≤ 10⁵\n- s[i] ∈ ascii[\'a\'-\'z\']</string>
     <string name="enter_parameter_string">Enter parameter string</string>
     <string name="find">Find</string>
 </resources>

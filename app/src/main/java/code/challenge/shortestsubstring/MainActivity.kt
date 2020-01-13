@@ -9,8 +9,6 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
-    private val characterLimit = 256
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -18,7 +16,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         find_btn.setOnClickListener(this)
     }
 
-
+    private val characterLimit = 256
     private fun charCount(string: String, length: Int): Int {
         val count = IntArray(characterLimit)
 
