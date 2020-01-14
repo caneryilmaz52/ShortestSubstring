@@ -5,6 +5,7 @@ import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlin.math.pow
 
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
@@ -62,17 +63,29 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onClick(v: View?) {
         var hasError = false
+        var errorMessage=""
         if(parameter_et.text != null && parameter_et.text.toString() !=""){
             val parameterString:String = parameter_et.text.toString()
 
             parameterString.forEach { char ->
-                if(char.isDigit()) hasError = true
+                if(char.isDigit()){
+                    hasError = true
+                    errorMessage = "String has digit."
+                }
             }
 
-            if(parameterString.contains(" ")) hasError = true
+            if(parameterString.contains(" ")){
+                hasError = true
+                errorMessage = "String has spaces."
+            }
+
+            if(parameterString.length > 10.0.pow(5.0)){
+                hasError = true
+                errorMessage = "String length more than 10⁵"
+            }
 
             if (hasError){
-                showAlertDialog("Error", "String has digit or spaces.")
+                showAlertDialog("Error", errorMessage)
             }else{
                 val shortestLength = shortestSubstring(parameterString)
                 showAlertDialog("Success","Shortest substring length is $shortestLength")
